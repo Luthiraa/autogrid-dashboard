@@ -78,13 +78,13 @@ export default function StatusCards() {
       {statusData.map((item) => (
         <div
           key={item.title}
-          className="bg-white rounded-lg shadow p-6"
+          className="bg-gray-800 rounded-lg shadow p-6 text-gray-100"
         >
           <div className="flex items-center">
             <item.icon className="h-8 w-8 text-gray-400 mr-2" />
             <div>
-              <p className="text-sm text-gray-500">{item.title}</p>
-              <p className="text-2xl font-semibold text-gray-900">
+              <p className="text-sm text-gray-400">{item.title}</p>
+              <p className="text-2xl font-semibold text-white">
                 {item.value}
               </p>
               <p className={`text-sm ${item.trendColor}`}>

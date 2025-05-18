@@ -108,8 +108,8 @@ export default function EnergyChart() {
   };
 
   return (
-    <div className="h-[400px]">
-      <div className="mb-2 text-sm text-gray-500">
+    <div className="h-[400px] bg-gray-800 rounded-lg shadow p-6 text-gray-100">
+      <div className="mb-2 text-sm text-gray-400">
         Next prediction at: {nextPrediction}
       </div>
       <ResponsiveContainer width="100%" height="90%">
@@ -122,22 +122,23 @@ export default function EnergyChart() {
             bottom: 0,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />          <XAxis 
+          <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />          <XAxis 
             dataKey="time" 
             interval={23}
             angle={-45}
             textAnchor="end"
             height={80}
-            tick={{ fontSize: 10 }}
+            tick={{ fontSize: 10, fill: '#E2E8F0' }}
           />
           <YAxis 
             domain={[0, 250]}
             tickCount={6}
             tick={false}
             axisLine={true}
+            stroke="#4A5568"
           />
-          <Tooltip />
-          <Legend />
+          <Tooltip contentStyle={{ backgroundColor: '#2D3748', borderColor: '#4A5568', color: '#E2E8F0' }} />
+          <Legend verticalAlign="top" height={36} wrapperStyle={{ color: '#E2E8F0' }} />
           <ReferenceLine
             x={data[data.length - 2]?.time}
             stroke="#EF4444"
@@ -147,9 +148,9 @@ export default function EnergyChart() {
             type="monotone"
             dataKey="solar"
             stackId="1"
-            stroke="#FDB813"
-            fill="#FDB813"
-            fillOpacity={0.3}
+            stroke="#FB923C"
+            fill="#FB923C"
+            fillOpacity={0.4}
             name="Solar"
             dot={<CustomDot />}
           />
@@ -157,27 +158,27 @@ export default function EnergyChart() {
             type="monotone"
             dataKey="wind"
             stackId="1"
-            stroke="#00A0DC"
-            fill="#00A0DC"
-            fillOpacity={0.3}
+            stroke="#20B2AA"
+            fill="#20B2AA"
+            fillOpacity={0.4}
             name="Wind"
             dot={<CustomDot />}
           />          <Area
             type="monotone"
             dataKey="criticalLoad"
             stackId="2"
-            stroke="#FF6B6B"
-            fill="#FF6B6B"
-            fillOpacity={0.3}
+            stroke="#E11D48"
+            fill="#E11D48"
+            fillOpacity={0.4}
             name="Critical Load"
             dot={<CustomDot />}
           />          <Area
             type="monotone"
             dataKey="nonEssentialLoad"
             stackId="2"
-            stroke="#9B59B6"
-            fill="#9B59B6"
-            fillOpacity={0.3}
+            stroke="#A78BFA"
+            fill="#A78BFA"
+            fillOpacity={0.4}
             name="Non-Critical Load"
             dot={<CustomDot />}
           />
@@ -185,9 +186,9 @@ export default function EnergyChart() {
             type="monotone"
             dataKey="essentialLoad"
             stackId="2"
-            stroke="#4ECDC4"
-            fill="#4ECDC4"
-            fillOpacity={0.3}
+            stroke="#059669"
+            fill="#059669"
+            fillOpacity={0.4}
             name="Essential Load"
             dot={<CustomDot />}
           />

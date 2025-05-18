@@ -48,4 +48,36 @@
     .charts {
         grid-template-columns: 1fr 1fr;
     }
-} 
+} .dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-image: 
+    linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%),
+    radial-gradient(at 50% 0%, rgba(255,255,255,.5) 0%, rgba(0,0,0,.5) 70%);
+  background-blend-mode: soft-light;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM37.656 0c-.652 0-1.296.088-1.91.25l-17.55 17.564c-.2.212-.342.457-.418.724-.076.266-.123.535-.123.808 0 .267.047.536.123.8L3.8 35.124v3.75c0 .664.088 1.308.25 1.922l12.132-12.132c.433.63 1.05 1.16 1.808 1.522l-3.58 3.58c-.53.53-.828 1.25-.828 2 0 .565.167 1.108.477 1.572L5.37 45.927c.53.342 1.108.555 1.714.635L26.972 26.674c.805.266 1.68.266 2.485 0 .087-.02.17-.048.252-.08.432.61.934 1.177 1.513 1.69L14.314 45.192c.124.036.248.06.374.077.35.05.704.05 1.054 0l16.108-16.107c.48.352.987.655 1.514.904L17.407 45.023c.454.31.997.477 1.562.477.75 0 1.47-.297 2-.828l25.686-25.686c.53-.53.828-1.25.828-2 0-.344-.067-.678-.19-.988 1.038-.84 1.975-1.843 2.778-2.986v3.543c0 .664.088 1.308.25 1.922l16.363-16.36C66.704.098 66.704 0 66.097 0H37.655z' fill='%237c8495' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}

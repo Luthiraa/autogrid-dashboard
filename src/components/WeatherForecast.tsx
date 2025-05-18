@@ -91,21 +91,21 @@ export default function WeatherForecast() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 bg-gray-800 rounded-lg shadow p-6 text-gray-100">
       {forecast.map((day) => {
         const Icon = getWeatherIcon(day.condition) || CloudIcon;
         return (
-          <div key={day.day} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+          <div key={day.day} className="flex items-center justify-between p-4 bg-gray-700 rounded-lg">
             <div className="flex items-center">
-              <Icon className="h-8 w-8 text-gray-600 mr-4" />
+              <Icon className="h-8 w-8 text-gray-400 mr-4" />
               <div>
-                <p className="font-medium text-gray-900">{day.day}</p>
-                <p className="text-sm text-gray-500">{day.condition}</p>
+                <p className="font-medium text-white">{day.day}</p>
+                <p className="text-sm text-gray-400">{day.condition}</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="font-medium text-gray-900">{day.temp}</p>
-              <p className="text-sm text-gray-500">Wind: {day.wind}</p>
+              <p className="font-medium text-white">{day.temp}</p>
+              <p className="text-sm text-gray-400">Wind: {day.wind}</p>
             </div>
           </div>
         );
